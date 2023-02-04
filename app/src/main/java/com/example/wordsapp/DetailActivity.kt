@@ -24,8 +24,19 @@ import com.example.wordsapp.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
 
+    //Companion Object is similar to other objects, such as instances of a class
+    //However, only a single instance of a companion object will exist for the duration of your program
+    //Sometimes called a singleton pattern.
+    companion object{
+        const val LETTER = "letter"
+        const val SEARCH_PREFIX = "https://www.google.com/search?q="
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //intent is a property of the activity that was launched by an intent. Keeps a reference\
+        //Extras is of type bundle
 
         // Retrieve a binding object that allows you to refer to views by id name
         // Names are converted from snake case to camel case.
@@ -36,7 +47,7 @@ class DetailActivity : AppCompatActivity() {
         // Retrieve the LETTER from the Intent extras
         // intent.extras.getString returns String? (String or null)
         // so toString() guarantees that the value will be a String
-        val letterId = "A"
+        val letterId = intent?.extras?.getString(LETTER).toString()
 
         val recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)

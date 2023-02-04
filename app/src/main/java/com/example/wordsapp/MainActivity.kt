@@ -33,6 +33,7 @@ import com.example.wordsapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -46,3 +47,8 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+
+
+//We will be creating a companion object which will be one instance of an object
+//that will exist solely while the app is running which will organize constants
+//THIS IS CALLED A SINGLETON PATTERN
